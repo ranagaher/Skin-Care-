@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جمالك الطبيعي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="font-['Tajawal'] bg-cream-50 text-gray-800">
+    <div class="flex">
+        <nav class="bg-olive-700 text-white w-64 h-screen fixed top-0 p-6 hidden md:block">
+            <h2 class="text-2xl font-bold mb-8">جمالك الطبيعي</h2>
+            <a href="#home" class="block py-2 hover:text-gold-500 transition"><i class="fas fa-home mr-2"></i> الرئيسية</a>
+            <a href="#recipes" class="block py-2 hover:text-gold-500 transition"><i class="fas fa-leaf mr-2"></i> وصفات</a>
+            <a href="#tips" class="block py-2 hover:text-gold-500 transition"><i class="fas fa-lightbulb mr-2"></i> نصائح يومية</a>
+            <a href="#tool" class="block py-2 hover:text-gold-500 transition"><i class="fas fa-spa mr-2"></i> روتين العناية</a>
+        </nav>
+        <div class="md:mr-64 w-full">
+            <header class="bg-olive-100 bg-opacity-80 text-center py-16 relative">
+                <div class="absolute inset-0 bg-[url('https://source.unsplash.com/random/1600x900/?nature')] bg-cover bg-center opacity-10"></div>
+                <h1 class="text-6xl font-bold text-olive-700 relative">جمالك الطبيعي</h1>
+                <p class="mt-4 text-xl text-gray-600 relative">عناية طبيعية لإشراقة دائمة</p>
+            </header>
+            <div class="container mx-auto px-6 py-12 max-w-5xl">
+                <div id="home" class="section mb-16 fade-in">
+                    <h2 class="text-4xl font-bold text-olive-600 mb-6">مرحبًا بكِ في عالم الجمال الطبيعي</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed bg-white p-6 rounded-xl shadow-md">اكتشفي وصفات طبيعية للعناية ببشرتكِ وشعركِ، وتعرفي على نصائح يومية للحفاظ على إشراقتكِ! نحن هنا لنقدم لكِ أفضل الحلول الطبيعية لتعزيز جمالكِ بطريقة آمنة وصحية.</p>
+                </div>
+                <hr class="border-gray-300 mb-16">
+                <div id="recipes" class="section mb-16">
+                    <h2 class="text-4xl font-bold text-olive-600 mb-6">وصفات طبيعية</h2>
+                    <div class="mb-6 flex items-center">
+                        <label for="recipeFilter" class="text-xl text-gray-600 ml-4">فلتر حسب نوع البشرة:</label>
+                        <select id="recipeFilter" class="p-3 border border-gold-500 rounded-lg bg-white focus:ring-2 focus:ring-gold-500">
+                            <option value="all">الكل</option>
+                            <option value="dry">جافة</option>
+                            <option value="oily">دهنية</option>
+                            <option value="combination">مختلطة</option>
+                        </select>
+                    </div>
+                    <div id="recipeList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="recipe bg-white p-6 rounded-lg shadow-lg border border-gold-500/20 hover:shadow-xl transition fade-in" data-skin="combination">
+                            <h3 class="text-2xl font-semibold text-olive-600">قناع العسل والليمون للبشرة</h3>
+                            <p class="mt-2 text-gray-600"><strong>المكونات:</strong> ملعقة عسل، عصير نصف ليمونة</p>
+                            <p class="text-gray-600"><strong>الطريقة:</strong> امزجي المكونات، ضعيها على وجهكِ لمدة 15 دقيقة، ثم اغسليه بالماء الفاتر.</p>
+                        </div>
+                        <div class="recipe bg-white p-6 rounded-lg shadow-lg border border-gold-500/20 hover:shadow-xl transition fade-in" data-skin="all">
+                            <h3 class="text-2xl font-semibold text-olive-600">زيت جوز الهند للشعر</h3>
+                            <p class="mt-2 text-gray-600"><strong>المكونات:</strong> ملعقتان زيت جوز الهند</p>
+                            <p class="text-gray-600"><strong>الطريقة:</strong> دلكي فروة رأسكِ بالزيت، اتركيه لمدة ساعة، ثم اغسلي شعركِ بالشامبو.</p>
+                        </div>
+                        <div class="recipe bg-white p-6 rounded-lg shadow-lg border border-gold-500/20 hover:shadow-xl transition fade-in" data-skin="dry">
+                            <h3 class="text-2xl font-semibold text-olive-600">قناع الأفوكادو لترطيب البشرة</h3>
+                            <p class="mt-2 text-gray-600"><strong>المكونات:</strong> نصف أفوكادو مهروس، ملعقة زبادي</p>
+                            <p class="text-gray-600"><strong>الطريقة:</strong> امزجي الأفوكادو مع الزبادي، ضعي الخليط على وجهكِ لمدة 20 دقيقة، ثم اغسليه بالماء.</p>
+                        </div>
+                        <div class="recipe bg-white p-6 rounded-lg shadow-lg border border-gold-500/20 hover:shadow-xl transition fade-in" data-skin="all">
+                            <h3 class="text-2xl font-semibold text-olive-600">خلطة السكر وزيت الزيتون لتقشير الجسم</h3>
+                            <p class="mt-2 text-gray-600"><strong>المكونات:</strong> نصف كوب سكر، 3 ملاعق زيت زيتون</p>
+                            <p class="text-gray-600"><strong>الطريقة:</strong> امزجي المكونات، استخدمي الخليط لتدليك جسمكِ بحركات دائرية، ثم اغسليه بالماء الدافئ.</p>
+                        </div>
+                        <div class="recipe bg-white p-6 rounded-lg shadow-lg border border-gold-500/20 hover:shadow-xl transition fade-in" data-skin="all">
+                            <h3 class="text-2xl font-semibold text-olive-600">ماء الورد لتنعيم البشرة</h3>
+                            <p class="mt-2 text-gray-600"><strong>المكونات:</strong> ماء ورد نقي</p>
+                            <p class="text-gray-600"><strong>الطريقة:</strong> رشي ماء الورد على وجهكِ بعد التنظيف كتونر، أو استخدميه لتهدئة البشرة يوميًا.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-gray-300 mb-16">
+                <div id="tips" class="section mb-16">
+                    <h2 class="text-4xl font-bold text-olive-600 mb-6">نصائح يومية للعناية</h2>
+                    <div class="bg-cream-50 p-6 rounded-xl shadow-md">
+                        <ul class="list-none space-y-4 text-gray-600">
+                            <li class="flex items-start"><i class="fas fa-tint text-gold-500 mr-3 mt-1"></i> اشربي 8 أكواب من الماء يوميًا للحفاظ على ترطيب بشرتكِ.</li>
+                            <li class="flex items-start"><i class="fas fa-sun text-gold-500 mr-3 mt-1"></i> استخدمي واقي الشمس يوميًا لحماية بشرتكِ من الأشعة فوق البنفسجية.</li>
+                            <li class="flex items-start"><i class="fas fa-bed text-gold-500 mr-3 mt-1"></i> احرصي على النوم 7-8 ساعات لتجديد خلايا البشرة.</li>
+                            <li class="flex items-start"><i class="fas fa-hand-sparkles text-gold-500 mr-3 mt-1"></i> تجنبي لمس وجهكِ بيديكِ لمنع انتقال البكتيريا.</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="border-gray-300 mb-16">
+                <div id="tool" class="section mb-16">
+                    <h2 class="text-4xl font-bold text-olive-600 mb-6">اكتشفي روتين العناية المناسب لبشرتكِ</h2>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <div class="flex items-center flex-col sm:flex-row">
+                            <label for="skinType" class="text-xl text-gray-600 ml-4 mb-2 sm:mb-0">اختري نوع بشرتكِ:</label>
+                            <select id="skinType" class="p-3 border border-gold-500 rounded-lg bg-white focus:ring-2 focus:ring-gold-500">
+                                <option value="dry">جافة</option>
+                                <option value="oily">دهنية</option>
+                                <option value="combination">مختلطة</option>
+                            </select>
+                        </div>
+                        <button onclick="suggestRoutine()" class="bg-gold-500 text-white px-6 py-3 rounded-lg hover:bg-gold-600 transition mt-6">اقترحي روتيني</button>
+                        <div id="routineResult" class="mt-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button onclick="scrollToTop()" class="fixed bottom-4 left-4 bg-gold-500 text-white p-3 rounded-full hover:bg-gold-600 transition"><i class="fas fa-arrow-up"></i></button>
+    <footer class="bg-olive-700 text-white text-center py-6">
+        <p>© 2025 جمالك الطبيعي - كل الحقوق محفوظة</p>
+    </footer>
+    <script>
+        function suggestRoutine() {
+            const skinType = document.getElementById('skinType').value;
+            let routine = '';
+
+            if (skinType === 'dry') {
+                routine = `
+                    <h3 class="text-2xl font-semibold text-olive-600">روتين العناية بالبشرة الجافة</h3>
+                    <p class="mt-2 text-gray-600"><strong>الصباح:</strong> اغسلي وجهكِ بغسول لطيف، استخدمي تونر مرطب مثل ماء الورد، ثم ضعي كريم مرطب غني بالزيوت الطبيعية.</p>
+                    <p class="text-gray-600"><strong>المساء:</strong> استخدمي زيت تنظيف لإزالة المكياج، ثم اغسلي وجهكِ، ضعي سيروم مرطب وقناع الأفوكادو مرة أسبوعيًا.</p>
+                `;
+            } else if (skinType === 'oily') {
+                routine = `
+                    <h3 class="text-2xl font-semibold text-olive-600">روتين العناية بالبشرة الدهنية</h3>
+                    <p class="mt-2 text-gray-600"><strong>الصباح:</strong> استخدمي غسول يحتوي على حمض الساليسيليك، ثم تونر خفيف، وكريم مرطب خالٍ من الزيوت.</p>
+                    <p class="text-gray-600"><strong>المساء:</strong> اغسلي وجهكِ مرتين، استخدمي قناع الطين مرة أسبوعيًا، ثم سيروم لتقليل اللمعان.</p>
+                `;
+            } else if (skinType === 'combination') {
+                routine = `
+                    <h3 class="text-2xl font-semibold text-olive-600">روتين العناية بالبشرة المختلطة</h3>
+                    <p class="mt-2 text-gray-600"><strong>الصباح:</strong> اغسلي وجهكِ بغسول متوازن، استخدمي تونر خفيف، ثم مرطب خفيف على المناطق الدهنية وغني على الجافة.</p>
+                    <p class="text-gray-600"><strong>المساء:</strong> استخدمي قناع العسل والليمون مرة أسبوعيًا، ثم سيروم للترطيب والتوازن.</p>
+                `;
+            }
+
+            document.getElementById('routineResult').innerHTML = routine;
+        }
+
+        function filterRecipes() {
+            const filter = document.getElementById('recipeFilter').value;
+            const recipes = document.querySelectorAll('.recipe');
+
+            recipes.forEach(recipe => {
+                const skinType = recipe.getAttribute('data-skin');
+                if (filter === 'all' || skinType === filter || skinType === 'all') {
+                    recipe.style.display = 'block';
+                } else {
+                    recipe.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById('recipeFilter').addEventListener('change', filterRecipes);
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add fade-in effect on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.section, .recipe').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+    <script>
+        // Custom Tailwind colors
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream-50': '#F8F1E9',
+                        'olive-100': '#E8ECE0',
+                        'olive-600': '#4A7043',
+                        'olive-700': '#3A5F35',
+                        'gold-500': '#D4A017',
+                        'gold-600': '#B88B14',
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
